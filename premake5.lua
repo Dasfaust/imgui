@@ -5,7 +5,7 @@ project "imgui"
     cppdialect "C++17"
     staticruntime "on"
     
-	  targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("build/" .. outputdir .. "/%{prj.name}")
 
 	  files
@@ -21,3 +21,9 @@ project "imgui"
         "imstb_truetype.h",
         "imgui_demo.cpp"
     }
+
+    filter "configurations:release"
+        optimize "on"
+
+    filter "configurations:dist"
+        optimize "on"
